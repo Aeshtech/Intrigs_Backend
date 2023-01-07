@@ -41,12 +41,17 @@ app.get('/', (req, res)=>{
 
 // =====================Using Middlewares=================
 app.use(
-  cors({
-    origin: "*",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    optionsSuccessStatus: 204,
-  })
+  cors()
 );
+// app.use(
+//   cors({
+//     origin: "*",
+//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//     optionsSuccessStatus: 204,
+//   })
+// );
+
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true }));
