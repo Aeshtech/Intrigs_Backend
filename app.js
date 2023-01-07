@@ -29,7 +29,7 @@ connectMongo();
 // ---------to handle errors after intial connection--------
 // ADD THIS IS YOUR CONNECTION FILE
 mongoose.connection.on('error', err => {
-    logError(err);
+    console.log(err);
 });
 
 app.get('/', (req, res)=>{
@@ -42,7 +42,7 @@ app.get('/', (req, res)=>{
 // =====================Using Middlewares=================
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "*",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     optionsSuccessStatus: 204,
   })
