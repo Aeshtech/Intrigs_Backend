@@ -42,11 +42,12 @@ app.get('/', (req, res)=>{
 // =====================Using Middlewares=================
 app.use(
   cors({
-    origin: "*",
+    origin: "http://localhost:3000",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     optionsSuccessStatus: 204,
   })
 );
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true }));
 app.use("/user", user);
