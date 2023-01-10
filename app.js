@@ -1,15 +1,13 @@
 const express = require('express');
 const app = express();
-
 const mongoose = require('mongoose');
 require("dotenv/config");
 const cors = require("cors");
 const bodyParser = require('body-parser');
-
 // ======================Routes=====================
 const user = require("./routes/User.route.js");
 const login = require("./routes/Login.route");
-
+const logistic = require('./routes/Logistic.route');
 
 
 
@@ -57,7 +55,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true }));
 app.use("/user", user);
 app.use("/login", login);
-
+app.use("/logistic", logistic)
 
 
 
