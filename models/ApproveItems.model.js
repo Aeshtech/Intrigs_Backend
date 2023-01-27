@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const approveItemsSchema = new mongoose.Schema({
+const approvedDatasSchema = new mongoose.Schema({
   excelData: [
     {
       type: Object,
@@ -8,4 +8,4 @@ const approveItemsSchema = new mongoose.Schema({
   ],
 });
 
-module.exports = mongoose.model("ApproveItems", approveItemsSchema);
+module.exports = mongoose.model("approveddatas", approvedDatasSchema, "approveddatas");

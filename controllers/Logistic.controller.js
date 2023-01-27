@@ -14,9 +14,12 @@ exports.excelToJson = async (req, res) => {
 }
 
 exports.approveProducts = async (req, res) => {
-    console.log(req.body.data);
-    const result = await ApprovedData.create({ excelData: req.body.data });
-    console.log(result);
+    const result = await ApprovedData;
+    res.status(200).json(result);
+  };
+  
+exports.getDestination = async (req, res) => {
+    const result = await ApprovedData.find();
     res.status(200).json(result);
   };
   
